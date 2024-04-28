@@ -7,18 +7,18 @@ const collectEmployees = function () {
   let employeesArray = [];
   let addEmployeesBtn = true;
   while (addEmployeesBtn) {
-  
+
     let fName = window.prompt("Enter First Name");
     let lName = window.prompt("Enter Last Name");
-    let salary = window.prompt("Enter Salary");
-  
+    let salary1 = window.prompt("Enter Salary");
+
     if (isNaN(salary)) {
-      salary = 0;
+      salary1 = 0;
     }
-    employeesArray.push({firstName: fName, lastName: lName, salary: salary});
+    employeesArray.push({ firstName: fName, lastName: lName, salary: salary1 });
 
     let continueB = window.confirm("Would you like to keep adding employees?");
-    addEmployeesBtn = continueB
+    addEmployeesBtn = continueB;
   }
 
   return employeesArray;
