@@ -3,7 +3,7 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
 const collectEmployees = function () {
-  
+
   let employeesArray = [];
   let addEmployeesBtn = true;
   while (addEmployeesBtn) {
@@ -30,15 +30,29 @@ function displayAverageSalary(employeesArray) {
   for (let i = 0; i < employeesArray.length; i++) {
     sum += employeesArray[i].salary;
   }
-  return sum / employeesArray.length;
+  var avgSalary = sum / employeesArray.length;
+  console.log(`The average salary between our ` + employeesArray.length + ` employee(s) is ` + avgSalary);
+  return avgSalary;
 }
 
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
-  return employeesArray[Math.floor(Math.random() * employeesArray.length)];
+
+  const rndemp = employeesArray[Math.floor(Math.random() * employeesArray.length)];
+
+  console.log(`Congratulations to ` + rndemp + `, our random drawing winner.`);
+
+  return rndemp;
+
 }
 
 
+// console.log(displayAverageSalary());
+// console.log(getRandomEmployee());
+
+
+// let name = prompt("what is your name?");
+// console.log(`story ${name} story`);
 
 /*
   ====================
