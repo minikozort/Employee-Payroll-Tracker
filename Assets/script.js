@@ -10,7 +10,8 @@ const collectEmployees = function () {
 
     let fName = window.prompt("Enter First Name");
     let lName = window.prompt("Enter Last Name");
-    let salary = window.prompt("Enter Salary");
+    let salary = parseFloat(window.prompt("Enter Salary"));
+
 
     if (isNaN(salary)) {
       salary = 0;
@@ -19,6 +20,7 @@ const collectEmployees = function () {
 
     let continueB = window.confirm("Would you like to keep adding employees?");
     addEmployeesBtn = continueB;
+    console.log("hello", typeof (salary));
   }
 
   return employeesArray;
@@ -28,13 +30,15 @@ const collectEmployees = function () {
 function displayAverageSalary(employeesArray) {
   let sum = 0
   for (let i = 0; i < employeesArray.length; i++) {
-    sum += employeesArray[i].salary;
-    console.log(sum);
+    sum += parseFloat(employeesArray[i].salary);
   }
   var avgSalary = sum / employeesArray.length;
-  console.log(`The average salary between our ` + employeesArray.length + ` employee(s) is ` + avgSalary);
+
+  console.log(`The average salary between our  ${employeesArray.length}  employee(s) is $ ${typeof(avgSalary).toFixed(2)})`);
+
   return avgSalary;
 }
+
 
 // Select a random employee
 function getRandomEmployee(employeesArray) {
@@ -48,12 +52,6 @@ function getRandomEmployee(employeesArray) {
 }
 
 
-// console.log(displayAverageSalary());
-// console.log(getRandomEmployee());
-
-
-// let name = prompt("what is your name?");
-// console.log(`story ${name} story`);
 
 /*
   ====================
