@@ -16,7 +16,7 @@ const collectEmployees = function () {
     if (isNaN(salary)) {
       salary = 0;
     }
-    employeesArray.push({ firstName: fName, lastName: lName, salary: parseFloat(salary) });
+    employeesArray.push({ firstName: fName, lastName: lName, salary: salary });
 
     let continueB = window.confirm("Would you like to keep adding employees?");
     addEmployeesBtn = continueB;
@@ -33,7 +33,7 @@ function displayAverageSalary(employeesArray) {
   }
   var avgSalary = sum / employeesArray.length;
 
-  console.log(`The average salary between our  ${employeesArray.length}  employee(s) is $ ${typeof (avgSalary).toFixed(2)})`);
+  console.log(`The average salary between our  ${employeesArray.length}  employee(s) is $ ${avgSalary.toFixed(2)}`);
 
   return avgSalary;
 }
